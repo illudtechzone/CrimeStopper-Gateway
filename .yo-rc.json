@@ -33,5 +33,16 @@
     "otherModules": [],
     "enableTranslation": false,
     "blueprints": []
+  },
+  "generator-jhipster-swagger-cli": {
+    "promptValues": {
+      "inputSpec": "http://localhost:8082/services/crimestopper/v2/api-docs",
+      "cliName": "crimestopper"
+    },
+    "apis": {
+      "crimestopper": {
+        "spec": "http://localhost:8082/services/crimestopper/v2/api-docs"
+      }
+    }
   }
 }
