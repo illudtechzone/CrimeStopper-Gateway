@@ -26,6 +26,9 @@ import java.util.Collection;
     @ComponentScan.Filter(com.illud.crimestopper.client.ExcludeFromComponentScan.class)
 })
 @EnableFeignClients
+@ComponentScan( excludeFilters = {
+    @ComponentScan.Filter(com.illud.crimestopper.client.ExcludeFromComponentScan.class)
+})
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 public class CrimestopperGatewayApp implements InitializingBean {

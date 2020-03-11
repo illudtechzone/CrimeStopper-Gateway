@@ -13,20 +13,20 @@ import javax.validation.constraints.*;
  * MediaDTO
  */
 @Validated
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-16T10:41:21.873813800+05:30[Asia/Colombo]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-11T14:29:41.420+05:30[Asia/Calcutta]")
 
 public class MediaDTO   {
   @JsonProperty("complaintId")
   private Long complaintId = null;
 
-  @JsonProperty("fileBlob")
-  private byte[] fileBlob = null;
+  @JsonProperty("file")
+  private byte[] file = null;
 
-  @JsonProperty("fileBlobContentType")
-  private String fileBlobContentType = null;
+  @JsonProperty("fileContentType")
+  private String fileContentType = null;
 
-  @JsonProperty("fileName")
-  private String fileName = null;
+  @JsonProperty("fileLink")
+  private String fileLink = null;
 
   @JsonProperty("id")
   private Long id = null;
@@ -51,64 +51,64 @@ public class MediaDTO   {
     this.complaintId = complaintId;
   }
 
-  public MediaDTO fileBlob(byte[] fileBlob) {
-    this.fileBlob = fileBlob;
+  public MediaDTO file(byte[] file) {
+    this.file = file;
     return this;
   }
 
   /**
-   * Get fileBlob
-   * @return fileBlob
+   * Get file
+   * @return file
   **/
   @ApiModelProperty(value = "")
 
 @Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$") 
-  public byte[] getFileBlob() {
-    return fileBlob;
+  public byte[] getFile() {
+    return file;
   }
 
-  public void setFileBlob(byte[] fileBlob) {
-    this.fileBlob = fileBlob;
+  public void setFile(byte[] file) {
+    this.file = file;
   }
 
-  public MediaDTO fileBlobContentType(String fileBlobContentType) {
-    this.fileBlobContentType = fileBlobContentType;
+  public MediaDTO fileContentType(String fileContentType) {
+    this.fileContentType = fileContentType;
     return this;
   }
 
   /**
-   * Get fileBlobContentType
-   * @return fileBlobContentType
+   * Get fileContentType
+   * @return fileContentType
   **/
   @ApiModelProperty(value = "")
 
 
-  public String getFileBlobContentType() {
-    return fileBlobContentType;
+  public String getFileContentType() {
+    return fileContentType;
   }
 
-  public void setFileBlobContentType(String fileBlobContentType) {
-    this.fileBlobContentType = fileBlobContentType;
+  public void setFileContentType(String fileContentType) {
+    this.fileContentType = fileContentType;
   }
 
-  public MediaDTO fileName(String fileName) {
-    this.fileName = fileName;
+  public MediaDTO fileLink(String fileLink) {
+    this.fileLink = fileLink;
     return this;
   }
 
   /**
-   * Get fileName
-   * @return fileName
+   * Get fileLink
+   * @return fileLink
   **/
   @ApiModelProperty(value = "")
 
 
-  public String getFileName() {
-    return fileName;
+  public String getFileLink() {
+    return fileLink;
   }
 
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
+  public void setFileLink(String fileLink) {
+    this.fileLink = fileLink;
   }
 
   public MediaDTO id(Long id) {
@@ -142,15 +142,15 @@ public class MediaDTO   {
     }
     MediaDTO mediaDTO = (MediaDTO) o;
     return Objects.equals(this.complaintId, mediaDTO.complaintId) &&
-        Objects.equals(this.fileBlob, mediaDTO.fileBlob) &&
-        Objects.equals(this.fileBlobContentType, mediaDTO.fileBlobContentType) &&
-        Objects.equals(this.fileName, mediaDTO.fileName) &&
+        Objects.equals(this.file, mediaDTO.file) &&
+        Objects.equals(this.fileContentType, mediaDTO.fileContentType) &&
+        Objects.equals(this.fileLink, mediaDTO.fileLink) &&
         Objects.equals(this.id, mediaDTO.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(complaintId, fileBlob, fileBlobContentType, fileName, id);
+    return Objects.hash(complaintId, file, fileContentType, fileLink, id);
   }
 
   @Override
@@ -159,9 +159,9 @@ public class MediaDTO   {
     sb.append("class MediaDTO {\n");
     
     sb.append("    complaintId: ").append(toIndentedString(complaintId)).append("\n");
-    sb.append("    fileBlob: ").append(toIndentedString(fileBlob)).append("\n");
-    sb.append("    fileBlobContentType: ").append(toIndentedString(fileBlobContentType)).append("\n");
-    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    file: ").append(toIndentedString(file)).append("\n");
+    sb.append("    fileContentType: ").append(toIndentedString(fileContentType)).append("\n");
+    sb.append("    fileLink: ").append(toIndentedString(fileLink)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
