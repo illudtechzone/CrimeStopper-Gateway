@@ -31,14 +31,12 @@ public class QueryServiceImpl implements QueryService {
 		this.esTemplate = esTemplate;
 	}
 
-
-	@Override
+	/*@Override
 	public ResponseEntity<ComplaintDTO> findComplaintById(Long id) {
 		StringQuery sq = new StringQuery(termQuery("id", id).toString());
 		return complaintResourceApi.convertComplaintToDtoUsingPOST(esTemplate.queryForObject(sq, Complaint.class));
 		
-	}
+	}*/
 
-	
 	
 }

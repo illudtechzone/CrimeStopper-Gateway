@@ -23,10 +23,10 @@ public class QueryResource {
 	QueryService queryService;
 	
 	
-	@GetMapping("/findByComplaintId/{id}")
+	/*@GetMapping("/findByComplaintId/{id}")
 	public ResponseEntity<ComplaintDTO> findComplaintById(@PathVariable Long id) {		
 		return queryService.findComplaintById(id);
 
-	}
+	}*/
 	
 }
