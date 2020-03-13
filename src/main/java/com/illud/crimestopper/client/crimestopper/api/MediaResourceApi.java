@@ -25,7 +25,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-11T14:29:41.420+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-13T15:47:03.591+05:30[Asia/Calcutta]")
 
 @Api(value = "MediaResource", description = "the MediaResource API")
 public interface MediaResourceApi {
@@ -53,6 +53,18 @@ public interface MediaResourceApi {
     @RequestMapping(value = "/api/media/{id}",
         method = RequestMethod.DELETE)
     ResponseEntity<Void> deleteMediaUsingDELETE(@ApiParam(value = "id",required=true) @PathVariable("id") Long id);
+
+
+    @ApiOperation(value = "findAllMediaByComplaintId", nickname = "findAllMediaByComplaintIdUsingGET", notes = "", response = MediaDTO.class, responseContainer = "List", tags={ "media-resource", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "OK", response = MediaDTO.class, responseContainer = "List"),
+        @ApiResponse(code = 401, message = "Unauthorized"),
+        @ApiResponse(code = 403, message = "Forbidden"),
+        @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value = "/api/findAllMediaByComplaintId/{complaintId}",
+        produces = "*/*", 
+        method = RequestMethod.GET)
+    ResponseEntity<List<MediaDTO>> findAllMediaByComplaintIdUsingGET(@ApiParam(value = "complaintId",required=true) @PathVariable("complaintId") Long complaintId);
 
 
     @ApiOperation(value = "getAllMedia", nickname = "getAllMediaUsingGET", notes = "", response = MediaDTO.class, responseContainer = "List", tags={ "media-resource", })

@@ -25,7 +25,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-11T14:29:41.420+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-03-13T15:47:03.591+05:30[Asia/Calcutta]")
 
 @Api(value = "ComplaintResource", description = "the ComplaintResource API")
 public interface ComplaintResourceApi {
@@ -55,6 +55,30 @@ public interface ComplaintResourceApi {
     ResponseEntity<Void> deleteComplaintUsingDELETE(@ApiParam(value = "id",required=true) @PathVariable("id") Long id);
 
 
+    @ApiOperation(value = "findComplaintByAuthorityId", nickname = "findComplaintByAuthorityIdUsingGET", notes = "", response = ComplaintDTO.class, responseContainer = "List", tags={ "complaint-resource", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "OK", response = ComplaintDTO.class, responseContainer = "List"),
+        @ApiResponse(code = 401, message = "Unauthorized"),
+        @ApiResponse(code = 403, message = "Forbidden"),
+        @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value = "/api/findComplaintByAuthorityId/{authorityId}",
+        produces = "*/*", 
+        method = RequestMethod.GET)
+    ResponseEntity<List<ComplaintDTO>> findComplaintByAuthorityIdUsingGET(@ApiParam(value = "authorityId",required=true) @PathVariable("authorityId") Long authorityId);
+
+
+    @ApiOperation(value = "findComplaintByUserIdpCode", nickname = "findComplaintByUserIdpCodeUsingGET", notes = "", response = ComplaintDTO.class, responseContainer = "List", tags={ "complaint-resource", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "OK", response = ComplaintDTO.class, responseContainer = "List"),
+        @ApiResponse(code = 401, message = "Unauthorized"),
+        @ApiResponse(code = 403, message = "Forbidden"),
+        @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value = "/api/findComplaintByUserIdpCode/{userIdpCode}",
+        produces = "*/*", 
+        method = RequestMethod.GET)
+    ResponseEntity<List<ComplaintDTO>> findComplaintByUserIdpCodeUsingGET(@ApiParam(value = "userIdpCode",required=true) @PathVariable("userIdpCode") String userIdpCode);
+
+
     @ApiOperation(value = "getAllComplaints", nickname = "getAllComplaintsUsingGET", notes = "", response = ComplaintDTO.class, responseContainer = "List", tags={ "complaint-resource", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ComplaintDTO.class, responseContainer = "List"),
@@ -64,7 +88,7 @@ public interface ComplaintResourceApi {
     @RequestMapping(value = "/api/complaints",
         produces = "*/*", 
         method = RequestMethod.GET)
-    ResponseEntity<List<ComplaintDTO>> getAllComplaintsUsingGET(@ApiParam(value = "eagerload", defaultValue = "false") @Valid @RequestParam(value = "eagerload", required = false, defaultValue="false") Boolean eagerload,@ApiParam(value = "Page number of the requested page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "Size of a page") @Valid @RequestParam(value = "size", required = false) Integer size,@ApiParam(value = "Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.") @Valid @RequestParam(value = "sort", required = false) List<String> sort);
+    ResponseEntity<List<ComplaintDTO>> getAllComplaintsUsingGET();
 
 
     @ApiOperation(value = "getComplaint", nickname = "getComplaintUsingGET", notes = "", response = ComplaintDTO.class, tags={ "complaint-resource", })
